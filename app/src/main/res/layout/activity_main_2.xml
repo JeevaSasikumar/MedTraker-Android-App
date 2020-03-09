@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorYellow">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textColor="@color/colorPrimary"
+        android:textAlignment="center"
+        android:textStyle="italic"
+        android:textSize="70sp" />
+    <EditText
+        android:id="@+id/tablet_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30dp"
+        android:hint="medicine name"
+        android:textColorHint="@color/colorAccent"
+        android:textColor="@color/colorAccent"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="4">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/hour_text"
+            android:hint="HH"
+            android:inputType="number"
+            android:textColor="@color/colorAccent"
+            android:textColorHint="@color/colorAccent"
+            android:textSize="30sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text=":"
+            android:textAlignment="center"
+            android:textSize="30sp" />
+
+        <EditText
+            android:id="@+id/minute_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:inputType="number"
+            android:hint="MM"
+            android:textColor="@color/colorAccent"
+            android:textColorHint="@color/colorAccent"
+            android:textSize="30sp" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="AM"
+            android:layout_weight="1"
+            android:textSize="30sp"
+            android:id="@+id/btn_am_pm"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/btn_add"
+            android:layout_marginTop="20dp"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:textColor="@color/colorWhite"
+            android:text="Add"
+            android:textSize="20sp"
+            android:layout_weight="1"
+            android:background="@color/colorBlack"
+            android:layout_marginHorizontal="45dp"
+            />
+
+        <Button
+            android:id="@+id/btn_delete"
+            android:layout_marginTop="20dp"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="45dp"
+            android:textColor="@color/colorWhite"
+            android:text="delete"
+            android:textSize="20sp"
+            android:layout_weight="1"
+            android:background="@color/colorBlack"/>
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/list_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:choiceMode="multipleChoice"/>
+
+</LinearLayout>
