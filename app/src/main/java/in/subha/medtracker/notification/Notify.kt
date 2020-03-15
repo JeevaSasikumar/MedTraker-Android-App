@@ -1,40 +1,26 @@
-package `in`.subha.medtracker.service
-
+package `in`.subha.medtracker.notification
 import `in`.subha.medtracker.R
 import `in`.subha.medtracker.mainactivity.MainActivity2
-import android.app.*
-import android.app.Service
+import android.app.Notification
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
-import android.graphics.BitmapFactory
 import android.graphics.Color
 import android.os.Build
-import android.os.IBinder
-import android.widget.RemoteViews
-import androidx.core.app.NotificationCompat
-import kotlin.random.Random
+import android.os.Bundle
+import android.os.PersistableBundle
+import androidx.appcompat.app.AppCompatActivity
 
-class Service : Service() {
+class Notify:AppCompatActivity() {
     lateinit var notificationManager : NotificationManager
     lateinit var notificationChannel : NotificationChannel
     lateinit var builder : Notification.Builder
     private val channelId = "in.subha.medtraker.notification"
     private val description = "Test notification"
-    override fun onCreate() {
-        super.onCreate()
-        addnotification()
-        stopSelf()
-    }
-
-    override fun onBind(intent: Intent?): IBinder? {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        stopSelf()
-    }
-    fun addnotification() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
         val notificationManager =
             getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         val intent = Intent(this,MainActivity2::class.java)
